@@ -12,34 +12,69 @@
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/edt_text"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_chat" />
 
-    <EditText
-        android:id="@+id/edt_text"
-        android:layout_width="0dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="6dp"
+        android:padding="8dp"
+        app:cardCornerRadius="6dp"
         android:background="@drawable/edt_bg"
-        android:hint="@string/ngl_text_goes_here_buddy"
-        android:padding="12dp"
-        android:elevation="10dp"
-        android:layout_marginBottom="10dp"
-        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/img_send"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/img_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="6dp"
-        app:layout_constraintStart_toEndOf="@+id/edt_text"
-        android:src="@drawable/baseline_send_24"
-        app:layout_constraintBottom_toBottomOf="@+id/edt_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/edt_text" />
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="6dp">
+
+            <EditText
+                android:id="@+id/edt_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:elevation="10dp"
+                android:hint="@string/ngl_text_goes_here_buddy"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/img_send"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:src="@drawable/baseline_send_24"
+                app:layout_constraintBottom_toBottomOf="@+id/edt_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/edt_text"
+                app:layout_constraintTop_toTopOf="@+id/edt_text" />
+
+            <ImageView
+                android:id="@+id/img_sendx"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="6dp"
+                android:src="@drawable/baseline_send_24"
+                app:layout_constraintBottom_toBottomOf="@+id/edt_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/edt_text"
+                app:layout_constraintTop_toTopOf="@+id/edt_text" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
