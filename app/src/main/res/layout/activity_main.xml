@@ -26,7 +26,7 @@
         android:layout_marginHorizontal="10dp"
         android:layout_marginBottom="6dp"
         android:padding="8dp"
-        app:cardCornerRadius="6dp"
+        app:cardCornerRadius="10dp"
         android:background="@drawable/edt_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
